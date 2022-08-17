@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import IService from '../interfaces/IService';
 import { ICar } from '../interfaces/ICar';
-import { ErrorTypes } from '../errors/catalog';
 
 export default class CarController {
   constructor(private _service: IService<ICar>) { }
