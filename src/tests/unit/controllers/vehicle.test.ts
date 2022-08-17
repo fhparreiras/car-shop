@@ -49,6 +49,15 @@ describe('Car Controller', () => {
     });
   });
 
+  describe('Procura todos os veículos', () => {
+    it('Encontra todos os veículos com sucesso', async () => {
+      await carController.read(req, res);
+
+      expect((res.status as sinon.SinonStub).calledWith(200)).to.be.true;
+      expect((res.json as sinon.SinonStub).calledWith(allVehicleMock)).to.be.true;
+    });
+  });
+
   describe('Procura um veículo com readOne', () => {
     it('Encontra o veículo com sucesso', async () => {
 
@@ -60,4 +69,24 @@ describe('Car Controller', () => {
     });
   });
 
+  describe('Atualiza um veículo', () => {
+    it('Successo na atualização', async () => {
+      req.params = { id: vehicleMockWithId._id }
+      req.body = vehicleMock
+      await carController.update(req, res);
+  
+      expect((res.status as sinon.SinonStub).calledWith(200)).to.be.true;
+      expect((res.json as sinon.SinonStub).calledWith(vehicleMockWithId)).to.be.true;
+    });
+  });
+
+  describe('Deleta um veículo', () => {
+    it('Deleta um veículo com sucesso', async () => {
+      req.params = { id: vehicleMockWithId._id }
+      await carController.delete(req, res);
+  
+      expect((res.status as sinon.SinonStub).calledWith(200)).to.be.true;
+      expect((res.json as sinon.SinonStub).calledWith(vehicleMockWithId)).to.be.true;
+    });
+  });
 });
