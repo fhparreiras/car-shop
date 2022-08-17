@@ -1,23 +1,27 @@
-import { IVehicle } from '../../interfaces/IVehicle';
+import { ICar } from '../../interfaces/ICar';
 
-const vehicleMock:IVehicle = {
+const vehicleMock:ICar = {
   model: 'car',
   year: 2010,
   color: 'black',
   status: undefined,
   buyValue: 40000,
+  doorsQty: 2,
+  seatsQty: 4,
 }
 
-const vehicleMockWithId:IVehicle & {_id:string} = {
+const vehicleMockWithId:ICar & {_id:string} = {
   _id: '623fsdf3423sdd12cd',
   model: 'car',
   year: 2010,
   color: 'black',
   status: undefined,
   buyValue: 40000,
+  doorsQty: 2,
+  seatsQty: 4,
 }
 
-const allVehicleMock:IVehicle[] & {_id:string}[] = [
+const allVehicleMock:ICar[] & {_id:string}[] = [
   {
     _id: '623fsdf3423sdd12cd',
     model: 'car',
@@ -25,6 +29,8 @@ const allVehicleMock:IVehicle[] & {_id:string}[] = [
     color: 'black',
     status: undefined,
     buyValue: 40000,
+    doorsQty: 2,
+    seatsQty: 4,
   },
   {
     _id: '624fgdf3423sdd12cd',
@@ -33,6 +39,8 @@ const allVehicleMock:IVehicle[] & {_id:string}[] = [
     color: 'blue',
     status: undefined,
     buyValue: 50000,
+    doorsQty: 2,
+    seatsQty: 4,
   },
 ]
 

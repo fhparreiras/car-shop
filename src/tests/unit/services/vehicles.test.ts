@@ -3,13 +3,13 @@ import chai from 'chai';
 const { expect } = chai;
 import { ZodError } from 'zod';
 import { ErrorTypes } from '../../../errors/catalog';
-import Vehicles from '../../../models/Vehicles';
-import VehicleService from '../../../services/Vehicles';
+import Cars from '../../../models/Cars';
+import CarService from '../../../services/Cars';
 import { allVehicleMock, vehicleMock, vehicleMockWithId } from '../../mocks/vehicleMock';
 
-describe('Vehicle Service', () => {
-	const vehicleModel = new Vehicles();
-	const vehicleService = new VehicleService(vehicleModel);
+describe('Car Service', () => {
+	const vehicleModel = new Cars();
+	const vehicleService = new CarService(vehicleModel);
 
 	before(() => {
 		sinon.stub(vehicleModel, 'create').resolves(vehicleMockWithId);

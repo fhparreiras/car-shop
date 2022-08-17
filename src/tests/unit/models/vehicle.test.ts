@@ -1,13 +1,13 @@
 import * as sinon from 'sinon';
 import chai from 'chai';
 const { expect } = chai;
-import Vehicles from '../../../models/Vehicles';
+import Cars from '../../../models/Cars';
 import { Model } from 'mongoose';
 import { vehicleMock, vehicleMockWithId } from '../../mocks/vehicleMock';
 
-describe('Vehicle Model', () => {
+describe('Cars Model', () => {
 
-  const vehicleModel = new Vehicles();
+  const vehicleModel = new Cars();
 
   before(async () => {
     sinon
