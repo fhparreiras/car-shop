@@ -35,8 +35,8 @@ describe('Car Service', () => {
 		it('Falha na criação', async () => {
 			try {
 				await vehicleService.create({} as any);
-			} catch (error) {
-				expect(error).to.be.instanceOf(ZodError);
+			} catch (error: any) {
+				expect(error.message).to.be.equal('InvalidMongoId');
 			}
 		});
 	});

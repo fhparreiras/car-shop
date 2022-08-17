@@ -11,7 +11,7 @@ const vehicleMock:ICar = {
 }
 
 const vehicleMockWithId:ICar & {_id:string} = {
-  _id: '623fsdf3423sdd12cd',
+  _id: '62cf1fc6498565d94eba52cd',
   model: 'car',
   year: 2010,
   color: 'black',
@@ -23,7 +23,7 @@ const vehicleMockWithId:ICar & {_id:string} = {
 
 const allVehicleMock:ICar[] & {_id:string}[] = [
   {
-    _id: '623fsdf3423sdd12cd',
+    _id: '62cf1fc6498565d94eba52cd',
     model: 'car',
     year: 2010,
     color: 'black',
@@ -33,7 +33,7 @@ const allVehicleMock:ICar[] & {_id:string}[] = [
     seatsQty: 4,
   },
   {
-    _id: '624fgdf3423sdd12cd',
+    _id: '62cf1fc6498565d94eba52cd',
     model: 'car',
     year: 2012,
     color: 'blue',
@@ -44,4 +44,15 @@ const allVehicleMock:ICar[] & {_id:string}[] = [
   },
 ]
 
-export { allVehicleMock, vehicleMock, vehicleMockWithId }
+const vehicleMockForChange:ICar & { _id: string } = {
+	_id: '62cf1fc6498565d94eba52cd',
+  model: 'car',
+  year: 2013,
+  color: 'yellow',
+  status: undefined,
+  buyValue: 70000,
+  doorsQty: 2,
+  seatsQty: 4,
+};
+
+export { allVehicleMock, vehicleMock, vehicleMockForChange, vehicleMockWithId }
