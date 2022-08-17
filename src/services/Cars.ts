@@ -10,6 +10,13 @@ class CarService implements IService<ICar> {
   }
 
   public async create(obj:ICar):Promise<ICar> {
+    const { model, year, color, buyValue, doorsQty, seatsQty } = obj;
+    const objArr = [model, year, color, buyValue, doorsQty, seatsQty];
+    objArr.forEach((item) => {
+      if (item === undefined) {
+        throw new Error(ErrorTypes.InvalidMongoId);
+      }
+    });
     const parsed = carsZodSchema.safeParse(obj);
     if (!parsed.success) {
       throw parsed.error;
